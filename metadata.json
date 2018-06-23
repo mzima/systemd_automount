@@ -4,7 +4,7 @@
   "author": "Martin Zimmermann",
   "summary": "Puppet module to manage systemd automounts",
   "license": "WTFPL",
-  "source": "",
+  "source": "https://github.com/mzima/systemd_automount",
   "dependencies": [
 
   ],
