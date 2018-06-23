@@ -61,6 +61,7 @@ define systemd_automount::config (
   # Refresh systemd configuration
   exec { "refesh_systemd-${mountpoint}":
     command     => 'systemctl daemon-reload',
+    path        => ['/sbin', '/usr/sbin', '/bin', '/usr/bin'],
     refreshonly => true
   } ~>
   # Enable automount unit
