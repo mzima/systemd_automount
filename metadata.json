@@ -1,6 +1,6 @@
 {
   "name": "mzima-systemd_automount",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Martin Zimmermann",
   "summary": "Puppet module to manage systemd automounts",
   "license": "WTFPL",
