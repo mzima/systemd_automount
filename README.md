@@ -31,7 +31,7 @@ Currently only these OS variants are tested, altought other OS distributions wit
 ### Example: Using Code
 
 You can use the funtionality of this module in your own .pp files by using the defined resource type `systemd_automount::config`.
-The list of associated parameters can be found here: [Parameters](####systemd\_automount::config)
+The list of associated parameters can be found here: [Parameters](#reference)
 
 The code below will mount the remote NFSv3 share `192.168.100.1:/share` at the local directory `/mnt`.
 
@@ -45,17 +45,17 @@ The code below will mount the remote NFSv3 share `192.168.100.1:/share` at the l
 ### Example: Using YAML (Hiera)
 
 The main class `systemd_automount` provides the parameter `mounts` which only accecpts a hash value.
-The list of associated parameters can be found here: [Parameters](####systemd\_automount::config)
+The list of associated parameters can be found here: [Parameters](#reference)
 
 The following example will mount the remote CIFS/SMB share `//192.168.100.1/smb` at the local directory `/dir_A` and the NFS4 share `192.168.200.2:/exports/nfs4` at the directory `/dir_B`.
 
 ```
  systemd_automount::mounts:
-   '/dir_A:
+   '/mountpoint1':
      'source'  : '//192.168.100.1/smb'
      'fstype'  : 'cifs'
      'running' : 'false'
-   '/dir_B':
+   '/mountpoint2':
      'source'  : '192.168.200.2:/exports/nfs4'
 ```
 ## Reference
@@ -68,7 +68,7 @@ Main class
 
 ##### Parameters
 
-* `auto_mounts` : This parameter accepts an hash describing one or multiple Systemd automount entries. Have a look at class [systemd\_automount::config](####systemd\_automount::config) to get informations about the posible parameters.
+* `mounts` : This parameter accepts an hash describing one or multiple Systemd automount entries. Have a look at class [systemd\_automount::config](####systemd\_automount::config) to get informations about the posible parameters.
 
 #### systemd\_automount::config
 

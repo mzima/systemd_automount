@@ -17,3 +17,9 @@ Initial version
 ### Bugfixes
 
 * Added PATH to exec statement
+
+## Release 0.1.3
+
+### Bugfixes
+
+* Documentation issues
