@@ -47,7 +47,7 @@ The code below will mount the remote NFSv3 share `192.168.100.1:/share` at the l
 The main class `systemd_automount` provides the parameter `mounts` which only accecpts a hash value.
 The list of associated parameters can be found here: [Parameters](#reference)
 
-The following example will mount the remote CIFS/SMB share `//192.168.100.1/smb` at the local directory `/dir_A` and the NFS4 share `192.168.200.2:/exports/nfs4` at the directory `/dir_B`.
+The following example will mount the remote CIFS/SMB share `//192.168.100.1/smb` at the local directory `/mountpoint1` and the NFS4 share `192.168.200.2:/exports/nfs4` at the directory `/mountpoint2`.
 
 ```
  systemd_automount::mounts:
