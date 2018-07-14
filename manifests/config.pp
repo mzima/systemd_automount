@@ -57,13 +57,17 @@ define systemd_automount::config (
     device  => $source,
     fstype  => $fstype,
     options => "x-systemd.automount,${auto},${options}",
-  } ~>
+  }
+
   # Refresh systemd configuration
-  exec { "refesh_systemd-${mountpoint}":
-    command     => 'systemctl daemon-reload',
-    path        => ['/sbin', '/usr/sbin', '/bin', '/usr/bin'],
-    refreshonly => true
-  } ~>
+  ~>  exec { "refesh_systemd-${mountpoint}":
+        command     => 'systemctl daemon-reload',
+        path        => ['/sbin', '/usr/sbin', '/bin', '/usr/bin'],
+        refreshonly => true
+      }
+
   # Enable automount unit
-  service { "${systemd_unit}.automount": ensure => $running, }
+  ~>  service { "${systemd_unit}.automount":
+        ensure => $running,
+      }
 }

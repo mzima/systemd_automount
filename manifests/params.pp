@@ -3,7 +3,6 @@
 # This module manages systemd automount module default parameter
 #
 class systemd_automount::params {
-
   # Default mount options
   $options = ''
   # Default filesystem type

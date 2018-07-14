@@ -11,8 +11,9 @@
 #     Hash definition of the automount configuration. Consult the README.md file for examples.
 #     Default: emtpy
 #
-class systemd_automount (Optional[Hash] $mounts = {}, Optional[Boolean] $override = false) inherits
-systemd_automount::params {
+class systemd_automount (
+  Optional[Hash]    $mounts   = {},
+  Optional[Boolean] $override = false ) inherits systemd_automount::params {
 
   unless $override {
     # Realize hash based configuration

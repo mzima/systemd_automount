@@ -8,7 +8,13 @@ Puppet::Functions.create_function(:'systemd_automount::systemd_escape') do
 
   def convert(input)
     input = input[/.(.*)/m,1]
-    output = `systemd-escape #{input}`
+    if system('which systemd-escape') == true
+      output = `systemd-escape #{input}`
+    else
+      input = input.gsub(/-/,'\\x2d')
+      input = input.gsub(/\//,'-')
+      output = input
+    end
     output.chomp
   end
 end
