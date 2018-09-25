@@ -20,7 +20,7 @@ This Puppet module can be used to manage Systemd automount units.
 
 ### Tested OS Versions
 
-Currently only these OS variants are tested, altought other OS distributions with **systemd** should also work.
+Currently only these OS variants are tested, although other OS distributions with **systemd** should also work.
 
 * Redhat/CentOS >= 7
 * SLES >= 12
@@ -44,7 +44,7 @@ The code below will mount the remote NFSv3 share `192.168.100.1:/share` at the l
 ```
 ### Example: Using YAML (Hiera)
 
-The main class `systemd_automount` provides the parameter `mounts` which only accecpts a hash value.
+The main class `systemd_automount` provides the parameter `mounts` which only accepts a hash value.
 The list of associated parameters can be found here: [Parameters](#reference)
 
 The following example will mount the remote CIFS/SMB share `//192.168.100.1/smb` at the local directory `/mountpoint1` and the NFS4 share `192.168.200.2:/exports/nfs4` at the directory `/mountpoint2`.
@@ -68,7 +68,7 @@ Main class
 
 ##### Parameters
 
-* `mounts` : This parameter accepts an hash describing one or multiple Systemd automount entries. Have a look at class [systemd\_automount::config](####systemd\_automount::config) to get informations about the posible parameters.
+* `mounts` : This parameter accepts an hash describing one or multiple Systemd automount entries. Have a look at class [systemd\_automount::config](####systemd\_automount::config) to get information about the possible parameters.
 
 #### systemd\_automount::config
 
@@ -88,7 +88,7 @@ Realizes the configuration of the systemd automount units
 <br>Type: *string*
 <br>Default: *nfs4*
 <br>Example: *'nfs', 'cifs'*
-* `options` : Mount options seperated by ","
+* `options` : Mount options separated by ","
 <br>Type: *string*
 <br>Default: *empty*
 <br>Example: *'sec=krb5p,intr,noacl'*
