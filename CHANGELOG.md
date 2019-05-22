@@ -23,3 +23,9 @@ Initial version
 ### Bugfixes
 
 * Documentation issues
+
+## Release 0.1.5
+
+### Bugfixes
+
+* Fix fstab options string

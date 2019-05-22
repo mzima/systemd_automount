@@ -50,13 +50,19 @@ define systemd_automount::config (
     $auto = 'noauto'
   }
 
+  if ! $options or $options == '' {
+    $options_str = "x-systemd.automount,${auto}"
+  } else {
+    $options_str = "x-systemd.automount,${auto},${options}"
+  }
+
   # Add fstab entry
   mount { $mountpoint:
     ensure  => 'present',
     name    => $mountpoint,
     device  => $source,
     fstype  => $fstype,
-    options => "x-systemd.automount,${auto},${options}",
+    options => $options_str,
   }
 
   # Refresh systemd configuration
